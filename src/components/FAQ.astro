@@ -1,0 +1,77 @@
+---
+//  Ruta sugerida: src/components/FAQ.astro
+---
+
+<!-- Sección de Preguntas Frecuentes -->
+<section id="faq" class="container section" aria-labelledby="faq-title">
+  <h2 id="faq-title">Preguntas Frecuentes</h2>
+
+  <div class="faq-list">
+    <!-- Cada bloque usa <details> para ser accesible y sin necesidad de JS -->
+    <details class="faq-item">
+      <summary>¿Cuánto tiempo lleva implementar el producto?</summary>
+      <p>
+        En promedio, nuestros clientes tardan menos de una semana en integrarlo
+        completamente en sus procesos.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Ofrecen soporte personalizado?</summary>
+      <p>
+        Sí, contamos con un equipo de especialistas que responde en menos de 24
+        horas a cualquier consulta.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué pasa si mi equipo crece?</summary>
+      <p>
+        Podés escalar tu plan en cualquier momento, solo se ajusta la
+        facturación y no perdés tus datos.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Necesito conocimientos técnicos avanzados?</summary>
+      <p>
+        No. Está diseñado para que cualquier persona del equipo pueda usarlo sin
+        depender de IT.
+      </p>
+    </details>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border: 1px dashed #404040;
+    padding: 1rem;
+    background: #fff;
+    color: #404040;
+    transition: background 0.3s;
+  }
+
+  .faq-item:hover {
+    background: #d3d3d3;
+  }
+
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+  }
+</style>

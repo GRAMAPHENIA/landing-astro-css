@@ -4,18 +4,20 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Products from "../components/Products.astro";
-import Testimonials from "../components/Testimonials.astro"
+import Testimonials from "../components/Testimonials.astro";
+import FAQ from "../components/FAQ.astro";
 ---
 
 <Layout
-	title="Producto Minimalista"
-	description="Landing page micro minimalista en blanco y negro, optimizada para SEO, accesibilidad y rendimiento perfecto en Lighthouse."
-	url="https://tusitio.com"
+  title="Producto Minimalista"
+  description="Landing page micro minimalista en blanco y negro, optimizada para SEO, accesibilidad y rendimiento perfecto en Lighthouse."
+  url="https://tusitio.com"
 >
-	<Header />
-	<main id="main">
-		<Hero />
-		<Products />
-		<Testimonials/>
-	</main>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Products />
+    <Testimonials />
+    <FAQ />
+  </main>
 </Layout>
