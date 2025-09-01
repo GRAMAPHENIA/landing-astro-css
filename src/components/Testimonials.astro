@@ -1,0 +1,77 @@
+<section
+  id="testimonios"
+  class="container section"
+  aria-labelledby="testimonios-title"
+>
+  <h2 id="testimonios-title">Testimonios</h2>
+
+  <div class="testimonial-list">
+    <blockquote class="testimonial">
+      <p>
+        "Desde que usamos Producto 1, nuestro flujo de trabajo ha mejorado
+        significativamente. Totalmente recomendable."
+      </p>
+      <cite>- Juan Pérez, CEO de EjemploCorp</cite>
+    </blockquote>
+
+    <blockquote class="testimonial">
+      <p>
+        "Producto 2 nos permitió automatizar tareas que antes consumían horas,
+        aumentando nuestra productividad."
+      </p>
+      <cite>- María López, Directora de Operaciones</cite>
+    </blockquote>
+
+    <blockquote class="testimonial">
+      <p>
+        "Gracias a Producto 3, nuestros clientes están más satisfechos y las
+        métricas de éxito han subido."
+      </p>
+      <cite>- Carlos Gómez, Gerente de Producto</cite>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .testimonial-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial {
+    border: 1px dashed #404040;
+    font-style: italic;
+    background: #fff;
+  }
+
+  .testimonial p {
+    margin-bottom: 1rem;
+    color: #404040;
+    padding-inline: 2rem;
+    display: -webkit-box; /* necesario para line-clamp */
+    -webkit-line-clamp: 3; /* límite de 3 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* oculta el resto */
+    text-overflow: ellipsis; /* agrega "…" */
+  }
+
+  .testimonial cite {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    color: #000;
+    /* padding-right: 2rem; */
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-list {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .testimonial {
+      flex: 1;
+    }
+  }
+</style>

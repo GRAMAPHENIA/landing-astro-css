@@ -1,0 +1,107 @@
+---
+// components/Hero.astro
+---
+
+<section class="hero container" aria-labelledby="hero-title">
+  <div class="hero-content">
+    <h2 id="hero-title">Tu mensaje principal</h2>
+    <p class="subtitle">Subtítulo que refuerza la propuesta de valor.</p>
+    <a
+      href="#productos"
+      class="btn-primary"
+      aria-label="Comenzar a explorar los productos"
+    >
+      Comenzar
+    </a>
+  </div>
+
+  <div class="hero-visual">
+    <img
+      class="hero-image"
+      src="/hero.png"
+      alt="Ilustración representativa del producto o servicio"
+      width="500"
+      height="400"
+    />
+  </div>
+</section>
+
+<style>
+  /* Contenedor principal del hero */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    border: 1px dashed #404040;
+    min-height: 400px; /* previene layout shift inicial */
+  }
+
+  /* Contenido textual */
+  .hero-content {
+    flex: 1;
+    min-height: 200px; /* asegura espacio antes de que cargue la fuente */
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: #404040;
+    margin-bottom: 1rem;
+  }
+
+  /* Botón primario */
+  .btn-primary {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: #000;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease-in-out;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: #404040;
+    outline: 1px dashed #000;
+    outline-offset: 2px;
+  }
+
+  /* Imagen hero */
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4; /* coincide con width/height del HTML */
+    display: block;
+  }
+
+  /* Responsive mobile */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      min-height: auto; /* se adapta al contenido */
+    }
+
+    .hero-content {
+      margin-bottom: 1rem;
+    }
+  }
+</style>

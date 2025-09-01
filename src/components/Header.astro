@@ -1,0 +1,71 @@
+---
+// components/Header.astro
+---
+
+<header class="header container">
+    <h1 class="logo">
+      <a href="/" aria-label="Ir a la página principal">LOGO</a>
+    </h1>
+  
+    <nav class="nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#productos" aria-label="Ver productos">Productos</a></li>
+        <li><a href="#contacto" aria-label="Ir a la sección de contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border: 1px dashed #404040;
+    }
+  
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+    }
+  
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .nav a {
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      color: #404040;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.2s ease-in-out;
+    }
+  
+    .nav a:focus,
+    .nav a:hover {
+      color: #000;
+      outline: 2px dashed #000;
+      outline-offset: 2px;
+    }
+  
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+  
