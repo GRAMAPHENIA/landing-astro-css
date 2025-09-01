@@ -3,7 +3,7 @@
 ---
 
 <section class="hero container" aria-labelledby="hero-title">
-  <div class="hero-content">
+  <div class="hero-content section">
     <h2 id="hero-title">Tu mensaje principal</h2>
     <p class="subtitle">Subtítulo que refuerza la propuesta de valor.</p>
     <a
@@ -12,6 +12,13 @@
       aria-label="Comenzar a explorar los productos"
     >
       Comenzar
+    </a>
+    <a
+      href="#productos"
+      class="btn-primary"
+      aria-label="Comenzar a explorar los productos"
+    >
+      Contacto
     </a>
   </div>
 
@@ -32,8 +39,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
     border: 1px dashed #404040;
     min-height: 400px; /* previene layout shift inicial */
   }
@@ -60,29 +65,42 @@
   /* Botón primario */
   .btn-primary {
     display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #fff;
+    padding: 0.75rem 1.5rem;
     background: #000;
-    padding: 0.5rem 1.25rem;
-    border-radius: 6px;
+    color: #fff;
     text-decoration: none;
-    transition: background 0.2s ease-in-out;
+    font-weight: 700;
+    transition: opacity 0.2s ease-in-out;
   }
 
   .btn-primary:hover,
   .btn-primary:focus {
-    background: #404040;
-    outline: 1px dashed #000;
-    outline-offset: 2px;
+    opacity: 0.8;
+    outline: none;
+  }
+
+  /* Botón primario */
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    opacity: 0.8;
+    outline: none;
   }
 
   /* Imagen hero */
   .hero-visual {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: right;
   }
 
   .hero-image {
@@ -98,10 +116,6 @@
       flex-direction: column;
       text-align: center;
       min-height: auto; /* se adapta al contenido */
-    }
-
-    .hero-content {
-      margin-bottom: 1rem;
     }
   }
 </style>
