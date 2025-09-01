@@ -1,15 +1,48 @@
-<section id="cta" class="container section" aria-labelledby="cta-title">
-    <h2 id="cta-title">¿Listo para transformar tu negocio?</h2>
-    <a href="#contact" class="btn-primary">Solicita una demo gratuita</a>
-  </section>
-  
-  <style>
-    #cta {
-      text-align: center;
-    }
-  
-    #cta h2 {
-      margin-bottom: 1.5rem;
-    }
-  </style>
-  
+---
+// /components/Cta.astro
+// Bloque de llamado a la acción final (CTA) antes del footer
+---
+
+<section id="cta" class="cta container section" aria-labelledby="cta-title">
+  <h2 id="cta-title">¿Listo para dar el siguiente paso?</h2>
+  <p>
+    Unite a cientos de profesionales que ya están mejorando su productividad 
+    con <strong>nuestro producto</strong>.
+  </p>
+  <a href="#contacto" class="cta-button">Comenzar ahora</a>
+</section>
+
+<style>
+  .cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f3f4f6; /* gris claro */
+  }
+
+  .cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+
+  .cta p {
+    margin-bottom: 2rem;
+    color: #333;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover,
+  .cta-button:focus {
+    background: #404040;
+  }
+</style>
