@@ -1,32 +1,99 @@
-<footer class="footer container" role="contentinfo">
-    <p>&copy; 2024 Nombre del Producto. Todos los derechos reservados.</p>
-    <nav aria-label="Enlaces de pie de página">
-      <a href="#">Términos de servicio</a> |
-      <a href="#">Política de privacidad</a> |
-      <a href="#hero">Volver arriba</a>
+---
+// /components/Footer.astro
+// Footer minimalista con navegación secundaria y links legales
+---
+
+<footer class="footer " aria-labelledby="footer-title">
+  <h2 id="footer-title" class="sr-only">Pie de página</h2>
+
+  <div class="footer-content">
+    <!-- Links de navegación secundaria -->
+    <nav class="footer-nav" aria-label="Navegación de pie de página">
+      <a href="#hero">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-  </footer>
-  
-  <style>
-    .footer {
-      text-align: center;
-      font-size: 0.875rem;
-      padding: 2rem 0;
-      color: #404040;
+
+    <!-- Links legales / créditos -->
+    <div class="footer-legal">
+      <span>© 2025 TuEmpresa. Todos los derechos reservados.</span>
+      <a href="/politica-privacidad">Política de Privacidad</a>
+      <a href="/terminos">Términos de Uso</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 2rem;
+    background: #111; /* fondo oscuro */
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-nav a:hover,
+  .footer-nav a:focus {
+    color: #6b7280; /* gris claro al hover */
+  }
+
+  .footer-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .footer-legal a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
-  
-    .footer nav {
-      margin-top: 0.5rem;
+
+    .footer-legal {
+      align-items: flex-end;
+      text-align: right;
     }
-  
-    .footer a {
-      text-decoration: none;
-      color: inherit;
-    }
-  
-    .footer a:hover,
-    .footer a:focus {
-      text-decoration: underline;
-    }
-  </style>
-  
+  }
+
+  /* Utilidad para accesibilidad: texto solo para screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
