@@ -1,77 +1,69 @@
-<section
-  id="testimonios"
-  class="container section"
-  aria-labelledby="testimonios-title"
->
-  <h2 id="testimonios-title">Testimonios</h2>
+---
+// Testimonials limpios
+---
 
-  <div class="testimonial-list">
-    <blockquote class="testimonial">
-      <p>
-        "Desde que usamos Producto 1, nuestro flujo de trabajo ha mejorado
-        significativamente. Totalmente recomendable."
-      </p>
-      <cite>- Juan Pérez, CEO de EjemploCorp</cite>
-    </blockquote>
-
-    <blockquote class="testimonial">
-      <p>
-        "Producto 2 nos permitió automatizar tareas que antes consumían horas,
-        aumentando nuestra productividad."
-      </p>
-      <cite>- María López, Directora de Operaciones</cite>
-    </blockquote>
-
-    <blockquote class="testimonial">
-      <p>
-        "Gracias a Producto 3, nuestros clientes están más satisfechos y las
-        métricas de éxito han subido."
-      </p>
-      <cite>- Carlos Gómez, Gerente de Producto</cite>
-    </blockquote>
+<section id="testimonials">
+  <div class="container">
+    <div class="section-intro text-center">
+      <h2>Lo que dicen nuestros usuarios</h2>
+      <p class="section-description">Testimonios reales de personas que confían en nosotros</p>
+    </div>
+    
+    <div class="grid grid-2">
+      <div class="card text-center">
+        <p class="quote">"Simple, efectivo y exactamente lo que necesitaba para mi negocio."</p>
+        <div class="author">
+          <strong>María García</strong>
+          <span>CEO, StartupX</span>
+        </div>
+      </div>
+      
+      <div class="card text-center">
+        <p class="quote">"La mejor decisión que hemos tomado este año para nuestro equipo."</p>
+        <div class="author">
+          <strong>Juan Pérez</strong>
+          <span>CTO, TechCorp</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .testimonial-list {
-    display: flex;
-    flex-direction: column;
+  .section-intro {
+    margin-bottom: 3rem;
   }
-
-  .testimonial {
-    border: 1px dashed #404040;
+  
+  .section-description {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 500px;
+    margin: 1rem auto 0;
+  }
+  
+  .quote {
     font-style: italic;
-    background: #fff;
+    font-size: 1.125rem;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
-  .testimonial p {
-    margin-bottom: 1rem;
-    color: #404040;
-    padding-inline: 2rem;
-    display: -webkit-box; /* necesario para line-clamp */
-    -webkit-line-clamp: 3; /* límite de 3 líneas */
-    -webkit-box-orient: vertical;
-    overflow: hidden; /* oculta el resto */
-    text-overflow: ellipsis; /* agrega "…" */
+  .author {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
   }
-
-  .testimonial cite {
+  
+  .author strong {
     display: block;
-    font-style: normal;
-    font-weight: 600;
-    text-align: right;
     color: #000;
-    /* padding-right: 2rem; */
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
   }
-
-  @media (min-width: 768px) {
-    .testimonial-list {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .testimonial {
-      flex: 1;
-    }
+  
+  .author span {
+    color: #666;
+    font-size: 0.9rem;
   }
 </style>

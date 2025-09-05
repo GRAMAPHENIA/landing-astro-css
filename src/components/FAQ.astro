@@ -1,77 +1,112 @@
 ---
-//  Ruta sugerida: src/components/FAQ.astro
+// FAQ con chevron y transiciones suaves
 ---
 
-<!-- Sección de Preguntas Frecuentes -->
-<section id="faq" class="container section" aria-labelledby="faq-title">
-  <h2 id="faq-title">Preguntas Frecuentes</h2>
-
-  <div class="faq-list">
-    <!-- Cada bloque usa <details> para ser accesible y sin necesidad de JS -->
-    <details class="faq-item">
-      <summary>¿Cuánto tiempo lleva implementar el producto?</summary>
-      <p>
-        En promedio, nuestros clientes tardan menos de una semana en integrarlo
-        completamente en sus procesos.
-      </p>
-    </details>
-
-    <details class="faq-item">
-      <summary>¿Ofrecen soporte personalizado?</summary>
-      <p>
-        Sí, contamos con un equipo de especialistas que responde en menos de 24
-        horas a cualquier consulta.
-      </p>
-    </details>
-
-    <details class="faq-item">
-      <summary>¿Qué pasa si mi equipo crece?</summary>
-      <p>
-        Podés escalar tu plan en cualquier momento, solo se ajusta la
-        facturación y no perdés tus datos.
-      </p>
-    </details>
-
-    <details class="faq-item">
-      <summary>¿Necesito conocimientos técnicos avanzados?</summary>
-      <p>
-        No. Está diseñado para que cualquier persona del equipo pueda usarlo sin
-        depender de IT.
-      </p>
-    </details>
+<section id="faq">
+  <div class="container">
+    <div class="section-intro text-center">
+      <h2>Preguntas frecuentes</h2>
+      <p class="section-description">Respuestas a las dudas más comunes</p>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Es fácil de usar para principiantes?
+          <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-content">
+            Sí, está diseñado para ser intuitivo desde el primer día. No necesitas conocimientos técnicos para empezar a usarlo.
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Qué incluye mi suscripción?
+          <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-content">
+            Acceso completo a todas las funciones, soporte 24/7 y actualizaciones gratuitas por vida.
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          ¿Hay garantía de devolución?
+          <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-content">
+            Sí, ofrecemos 30 días de garantía completa. Si no estás satisfecho, te devolvemos todo tu dinero.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
+  .section-intro {
+    margin-bottom: 3rem;
+  }
+  
+  .section-description {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 500px;
+    margin: 1rem auto 0;
+  }
+
   .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-question {
     display: flex;
-    flex-direction: column;
-  }
-
-  .faq-item {
-    border: 1px dashed #404040;
-    padding: 1rem;
-    background: #fff;
-    color: #404040;
-    transition: background 0.3s;
-  }
-
-  .faq-item:hover {
-    background: #d3d3d3;
-  }
-
-  .faq-item summary {
-    font-weight: 600;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    list-style: none;
+    font-weight: 500;
+    color: #000;
+    font-size: 1.125rem;
+    line-height: 1.4;
   }
-
-  .faq-item summary::-webkit-details-marker {
-    display: none;
+  
+  .chevron {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: #666;
   }
-
-  .faq-item p {
-    margin-top: 0.5rem;
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .faq-content {
+    color: #666;
     line-height: 1.6;
+    padding: 0;
+  }
+  
+  .faq-item.active .chevron {
+    transform: rotate(180deg);
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 1rem 0;
   }
 </style>

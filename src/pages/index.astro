@@ -1,27 +1,26 @@
 ---
-// index.astro
+// index.astro - Microminimalista
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import Products from "../components/Products.astro";
+import Features from "../components/Features.astro";
 import Testimonials from "../components/Testimonials.astro";
 import FAQ from "../components/FAQ.astro";
-import CTA from "../components/CTA.astro";
+import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout
-  title="Producto Minimalista"
-  description="Landing page micro minimalista en blanco y negro, optimizada para SEO, accesibilidad y rendimiento perfecto en Lighthouse."
-  url="https://tusitio.com"
+  title="Producto Simple - La solución que necesitas"
+  description="Landing page minimalista, simple y eficaz."
 >
   <Header />
-  <main id="main">
+  <main>
     <Hero />
-    <Products />
+    <Features />
     <Testimonials />
     <FAQ />
-    <CTA />
-    <Footer />
+    <Contact />
   </main>
+  <Footer />
 </Layout>

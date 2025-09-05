@@ -1,36 +1,24 @@
-<section id="contact" class="container section" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contacto</h2>
-    <form action="#" method="post" class="contact-form">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required />
-
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-        <button type="submit" class="btn-primary">Enviar Mensaje</button>
-    </form>
+<section id="contact">
+  <div class="container">
+    <div class="contact-content text-center">
+      <h2>Comienza hoy mismo</h2>
+      <p class="contact-description">Únete a miles de usuarios que ya han mejorado su productividad.</p>
+      <a href="#" class="btn btn-primary">Empezar gratis ahora</a>
+    </div>
+  </div>
 </section>
 
 <style>
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 600px;
-        margin: 2rem auto 0;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        padding: 0.75rem;
-        border: 1px solid #404040;
-        font-family: inherit;
-    }
-
-    .contact-form button {
-        align-self: flex-start;
-    }
+  .contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-description {
+    font-size: 1.125rem;
+    color: #666;
+    margin: 1rem auto 2rem;
+    line-height: 1.6;
+  }
 </style>
+

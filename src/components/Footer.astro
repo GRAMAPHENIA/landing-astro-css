@@ -1,99 +1,37 @@
 ---
-// /components/Footer.astro
-// Footer minimalista con navegación secundaria y links legales
+// Footer microminimalista con versión
 ---
 
-<footer class="footer " aria-labelledby="footer-title">
-  <h2 id="footer-title" class="sr-only">Pie de página</h2>
-
-  <div class="footer-content">
-    <!-- Links de navegación secundaria -->
-    <nav class="footer-nav" aria-label="Navegación de pie de página">
-      <a href="#hero">Inicio</a>
-      <a href="#productos">Productos</a>
-      <a href="#testimonios">Testimonios</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-
-    <!-- Links legales / créditos -->
-    <div class="footer-legal">
-      <span>© 2025 TuEmpresa. Todos los derechos reservados.</span>
-      <a href="/politica-privacidad">Política de Privacidad</a>
-      <a href="/terminos">Términos de Uso</a>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; 2024 Producto Simple. Todos los derechos reservados.</p>
+      <p class="version">v1.0.0</p>
     </div>
   </div>
 </footer>
 
 <style>
-  .footer {
-    padding: 2rem;
-    background: #111; /* fondo oscuro */
-    color: #fff;
-    font-size: 0.9rem;
-  }
-
   .footer-content {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     align-items: center;
-  }
-
-  .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
   }
-
-  .footer-nav a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .footer-nav a:hover,
-  .footer-nav a:focus {
-    color: #6b7280; /* gris claro al hover */
-  }
-
-  .footer-legal {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    font-size: 0.8rem;
+  
+  .footer-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
     text-align: center;
   }
-
-  .footer-legal a {
-    color: #fff;
-    text-decoration: underline;
-  }
-
-  @media (min-width: 768px) {
-    .footer-content {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .footer-legal {
-      align-items: flex-end;
-      text-align: right;
-    }
-  }
-
-  /* Utilidad para accesibilidad: texto solo para screen readers */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  
+  .version {
+    margin-top: 0.5rem !important;
+    font-size: 0.8rem !important;
+    color: #999 !important;
+    font-family: monospace;
+    text-align: center !important;
   }
 </style>

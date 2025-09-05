@@ -1,121 +1,26 @@
 ---
-// components/Hero.astro
+// Hero claro y centrado
 ---
 
-<section class="hero container" aria-labelledby="hero-title">
-  <div class="hero-content section">
-    <h2 id="hero-title">Tu mensaje principal</h2>
-    <p class="subtitle">Subtítulo que refuerza la propuesta de valor.</p>
-    <a
-      href="#productos"
-      class="btn-primary"
-      aria-label="Comenzar a explorar los productos"
-    >
-      Comenzar
-    </a>
-    <a
-      href="#productos"
-      class="btn-primary"
-      aria-label="Comenzar a explorar los productos"
-    >
-      Contacto
-    </a>
-  </div>
-
-  <div class="hero-visual">
-    <img
-      class="hero-image"
-      src="/hero.png"
-      alt="Ilustración representativa del producto o servicio"
-      width="500"
-      height="400"
-    />
+<section class="hero">
+  <div class="container">
+    <div class="hero-content text-center">
+      <h1>Simplifica tu trabajo diario</h1>
+      <p class="hero-description">La herramienta que necesitas para ser más productivo, sin complicaciones ni curvas de aprendizaje.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Empezar gratis</a>
+        <a href="#features" class="btn">Ver características</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  /* Contenedor principal del hero */
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px dashed #404040;
-    min-height: 400px; /* previene layout shift inicial */
-  }
-
-  /* Contenido textual */
-  .hero-content {
-    flex: 1;
-    min-height: 200px; /* asegura espacio antes de que cargue la fuente */
-  }
-
-  .hero-content h2 {
-    font-size: 2rem;
-    color: #000;
-    margin-bottom: 0.5rem;
-  }
-
-  .subtitle {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #404040;
-    margin-bottom: 1rem;
-  }
-
-  /* Botón primario */
-  .btn-primary {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .btn-primary:hover,
-  .btn-primary:focus {
-    opacity: 0.8;
-    outline: none;
-  }
-
-  /* Botón primario */
-  .btn-secondary {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .btn-secondary:hover,
-  .btn-secondary:focus {
-    opacity: 0.8;
-    outline: none;
-  }
-
-  /* Imagen hero */
-  .hero-visual {
-    flex: 1;
-    display: flex;
-    justify-content: right;
-  }
-
-  .hero-image {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 5 / 4; /* coincide con width/height del HTML */
-    display: block;
-  }
-
-  /* Responsive mobile */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-      min-height: auto; /* se adapta al contenido */
-    }
+  .hero-description {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
   }
 </style>
