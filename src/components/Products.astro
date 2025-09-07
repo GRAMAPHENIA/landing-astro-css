@@ -113,7 +113,7 @@
 <style>
   .products-section {
     padding: 5rem 0;
-    background: #fff;
+    background: var(--color-base);
     position: relative;
   }
 
@@ -126,13 +126,13 @@
   .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #000;
+    color: var(--color-text-dark);
     margin-bottom: 1rem;
   }
 
   .section-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--color-text-muted);
     line-height: 1.6;
   }
 
@@ -144,16 +144,17 @@
   }
 
   .product-card {
-    background: #fff;
-    border-radius: 16px;
+    background: var(--color-base);
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border-light);
   }
 
   .product-card:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 20px var(--color-border);
+    border-color: var(--color-border-primary);
   }
 
   .product-image {
@@ -176,10 +177,10 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: #000;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-base);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 0;
     font-size: 0.8rem;
     font-weight: 600;
   }
@@ -191,12 +192,12 @@
   .product-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #000;
+    color: var(--color-text-dark);
     margin-bottom: 1rem;
   }
 
   .product-content p {
-    color: #666;
+    color: var(--color-text-muted);
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
@@ -210,7 +211,7 @@
 
   .feature {
     font-size: 0.9rem;
-    color: #333;
+    color: var(--color-text);
     display: flex;
     align-items: center;
   }
@@ -224,7 +225,7 @@
   .product-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #000;
+    color: var(--color-text-dark);
   }
 
   .btn-small {
@@ -235,18 +236,65 @@
   .products-cta {
     text-align: center;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.02);
-    border-radius: 16px;
-    border: 1px dashed rgba(0, 0, 0, 0.1);
+    background: var(--color-accent-light);
+    border-radius: 0;
+    border: 1px solid var(--color-border-light);
   }
 
   .products-cta p {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 1rem;
   }
 
-  /* Responsive design */
+  /* Responsive design mejorado */
+  @media (max-width: 576px) {
+    .products-section {
+      padding: 3rem 0;
+    }
+    
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+    }
+    
+    .product-content {
+      padding: 1.5rem;
+    }
+    
+    .product-content h3 {
+      font-size: 1.3rem;
+    }
+    
+    .product-features {
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature {
+      font-size: 0.85rem;
+    }
+    
+    .product-price {
+      font-size: 1.3rem;
+    }
+    
+    .products-cta {
+      padding: 1.5rem;
+      margin: 0 1rem;
+    }
+    
+    .products-cta p {
+      font-size: 1rem;
+    }
+  }
+
   @media (min-width: 768px) {
     .products-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -267,16 +315,16 @@
 
   /* Hover effects para tarjetas populares */
   .product-card:first-child .product-badge {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     animation: pulse 2s infinite;
   }
 
   .product-card:nth-child(2) .product-badge {
-    background: linear-gradient(135deg, #4834d4, #686de0);
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
   }
 
   .product-card:nth-child(3) .product-badge {
-    background: linear-gradient(135deg, #2d3436, #636e72);
+    background: linear-gradient(135deg, var(--color-text), var(--color-primary));
   }
 
   @keyframes pulse {

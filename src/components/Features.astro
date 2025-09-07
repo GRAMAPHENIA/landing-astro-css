@@ -3,7 +3,7 @@
 ---
 
 <section id="features">
-  <div class="container">
+  <div class="container section">
     <div class="section-intro text-center">
       <h2>¿Por qué elegir nuestro producto?</h2>
       <p class="section-description">Tres razones principales que nos hacen únicos</p>
@@ -11,16 +11,25 @@
     
     <div class="grid grid-3">
       <div class="card text-center">
+        <div class="feature-icon">
+          <img src="/icons/thumbs-up.svg" alt="Fácil de usar" />
+        </div>
         <h3>Fácil de Usar</h3>
         <p>Interfaz intuitiva que puedes dominar en minutos.</p>
       </div>
       
       <div class="card text-center">
+        <div class="feature-icon">
+          <img src="/icons/zap.svg" alt="Resultados rápidos" />
+        </div>
         <h3>Resultados Rápidos</h3>
         <p>Ve mejoras inmediatas desde el primer día de uso.</p>
       </div>
       
       <div class="card text-center">
+        <div class="feature-icon">
+          <img src="/icons/shield-check.svg" alt="Completamente seguro" />
+        </div>
         <h3>Completamente Seguro</h3>
         <p>Tus datos protegidos con los mejores estándares.</p>
       </div>
@@ -35,7 +44,7 @@
   
   .section-description {
     font-size: 1.125rem;
-    color: #666;
+    color: var(--color-text-muted);
     max-width: 500px;
     margin: 1rem auto 0;
   }
