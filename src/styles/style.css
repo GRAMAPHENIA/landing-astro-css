@@ -9,7 +9,7 @@
   --color-text-dark: oklch(
     20.104% 0.00906 42.94 / 0.834
   ); /* marrón oscuro para énfasis */
-  --color-primary: oklch(55% 0.02 50); /* terracota desaturada */
+  --color-primary: oklch(54.916% 0.02065 48.211); /* terracota desaturada */
   --color-secondary: oklch(44.873% 0.01496 29.798); /* arcilla grisácea */
   --color-accent: oklch(70% 0.02 70); /* arena apagada */
 
@@ -210,7 +210,7 @@ p {
   top: 0;
   width: 100%;
   background-color: var(--color-base);
-  z-index: 100;
+  z-index: 997;
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--color-border-light);
 }
@@ -252,6 +252,196 @@ p {
 
 .nav a:hover {
   color: var(--color-primary);
+}
+
+/* =============================
+   NAVEGACIÓN MÓVIL
+   ============================= */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-small);
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--color-accent-light);
+}
+
+.menu-icon,
+.close-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu-btn:hover .menu-icon {
+  opacity: 1;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, 
+    oklch(20% 0.01 40 / 0.4), 
+    oklch(25% 0.015 60 / 0.3)
+  );
+  backdrop-filter: blur(8px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: var(--color-base);
+  border-left: 1px solid var(--color-border-light);
+  z-index: 999;
+  padding: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: -8px 0 32px oklch(20% 0.01 40 / 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sidebar.active {
+  transform: translateX(-300px);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem; /* Mismo padding vertical que header */
+  background: var(--color-base);
+  min-height: calc(40px + 1.5rem); /* Logo height + paddings del header */
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.sidebar-brand {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.sidebar-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem; /* Mismo padding que mobile-menu-btn */
+  border-radius: var(--radius-small);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  margin-right: 0; /* Alineado exactamente como el botón móvil */
+}
+
+.sidebar-close-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-accent-light);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-close-btn:hover::before {
+  opacity: 1;
+}
+
+.sidebar-close-btn:hover {
+  transform: scale(1.05);
+}
+
+.sidebar-close-btn:hover .close-icon {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 1.5rem 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-nav li {
+  margin: 0;
+  position: relative;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.sidebar-link:hover {
+  color: var(--color-primary);
+  background: oklch(94% 0.005 80);
+}
+
+.sidebar-link span {
+  position: relative;
+}
+
+/* Prevenir scroll cuando el sidebar está abierto */
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* Mostrar botón móvil y ocultar nav desktop en pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  /* Asegurar alineación perfecta en móvil */
+  .sidebar-header {
+    padding: 0.75rem 2rem;
+    min-height: calc(40px + 1.5rem);
+  }
+  
+  .sidebar-close-btn {
+    /* Posición exacta para coincidir con mobile-menu-btn */
+    margin-right: 0;
+  }
 }
 
 /* =============================

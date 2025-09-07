@@ -1,5 +1,5 @@
 ---
-// Header microminimalista
+// Header microminimalista con navegación móvil
 ---
 
 <header class="header">
@@ -7,7 +7,9 @@
     <a href="#top" class="logo">
       <img src="/logos/logo.svg" alt="Logo" class="logo-img" />
     </a>
-    <nav>
+    
+    <!-- Navegación desktop -->
+    <nav class="nav-desktop">
       <ul class="nav">
         <li><a href="#features">Características</a></li>
         <li><a href="#products">Productos</a></li>
@@ -16,5 +18,90 @@
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
+    
+    <!-- Botón menú móvil -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+      <img src="/icons/square-menu.svg" alt="Menú" class="menu-icon" />
+    </button>
   </div>
+  
+  <!-- Overlay para cerrar el menú -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  
+  <!-- Sidebar móvil -->
+  <nav class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <h3 class="sidebar-brand">Navegación</h3>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Cerrar menú">
+        <img src="/icons/arrow-right-from-line.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+    
+    <ul class="sidebar-nav">
+      <li><a href="#features" class="sidebar-link"><span>Características</span></a></li>
+      <li><a href="#products" class="sidebar-link"><span>Productos</span></a></li>
+      <li><a href="#testimonials" class="sidebar-link"><span>Testimonios</span></a></li>
+      <li><a href="#faq" class="sidebar-link"><span>FAQ</span></a></li>
+      <li><a href="#contact" class="sidebar-link"><span>Contacto</span></a></li>
+    </ul>
+  </nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn') as HTMLButtonElement | null;
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn') as HTMLButtonElement | null;
+    const mobileSidebar = document.getElementById('mobileSidebar') as HTMLElement | null;
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay') as HTMLElement | null;
+    const sidebarLinks = document.querySelectorAll<HTMLAnchorElement>('.sidebar-link');
+    
+    // Validar que todos los elementos existan
+    if (!mobileMenuBtn || !sidebarCloseBtn || !mobileSidebar || !mobileMenuOverlay) {
+      console.warn('Elementos del menú móvil no encontrados');
+      return;
+    }
+    
+    // Función para abrir el sidebar
+    function openSidebar() {
+      if (!mobileSidebar || !mobileMenuOverlay) return;
+      
+      document.body.classList.add('sidebar-open');
+      mobileSidebar.classList.add('active');
+      mobileMenuOverlay.classList.add('active');
+      
+      // Prevenir scroll del body
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Función para cerrar el sidebar
+    function closeSidebar() {
+      if (!mobileSidebar || !mobileMenuOverlay) return;
+      
+      document.body.classList.remove('sidebar-open');
+      mobileSidebar.classList.remove('active');
+      mobileMenuOverlay.classList.remove('active');
+      
+      // Restaurar scroll del body
+      document.body.style.overflow = '';
+    }
+    
+    // Event listeners
+    mobileMenuBtn.addEventListener('click', openSidebar);
+    sidebarCloseBtn.addEventListener('click', closeSidebar);
+    mobileMenuOverlay.addEventListener('click', closeSidebar);
+    
+    // Cerrar sidebar al hacer click en un link
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeSidebar();
+      });
+    });
+    
+    // Cerrar sidebar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileSidebar?.classList.contains('active')) {
+        closeSidebar();
+      }
+    });
+  });
+</script>
