@@ -293,7 +293,7 @@ p {
     oklch(20% 0.01 40 / 0.4), 
     oklch(25% 0.015 60 / 0.3)
   );
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(3px);
   z-index: 998;
   opacity: 0;
   visibility: hidden;
@@ -447,30 +447,6 @@ body.sidebar-open {
 /* =============================
    HERO
    ============================= */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 4rem;
-}
-
-.hero-content {
-  max-width: 800px;
-}
-
-.hero h1 {
-  margin-bottom: 2rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: var(--color-text-muted);
-  margin: 0 auto 3rem;
-  max-width: 600px;
-}
-
 /* =============================
    ANIMACIONES
    ============================= */
@@ -637,15 +613,6 @@ body.sidebar-open {
     font-size: 1rem;
   }
 
-  .hero {
-    padding-top: 3rem;
-    min-height: 90vh;
-  }
-
-  .hero p {
-    font-size: 1.125rem;
-  }
-
   .nav {
     display: none;
   }
@@ -689,16 +656,6 @@ body.sidebar-open {
   }  p {
     font-size: 0.95rem;
     line-height: 1.6;
-  }
-
-  .hero {
-    padding-top: 2.5rem;
-    min-height: 85vh;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
   }
 
   section {

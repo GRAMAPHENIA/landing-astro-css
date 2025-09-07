@@ -20,6 +20,10 @@
   .hero {
     padding: 4rem 0 5rem;
     background: var(--color-base);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-content {
@@ -57,6 +61,10 @@
     font-weight: 500;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px oklch(55% 0.02 50 / 0.15);
+    min-height: 44px; /* Minimum touch target */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-cta:hover {
@@ -74,28 +82,126 @@
     font-weight: 400;
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
+  /* Responsive Mobile-First */
+  @media (max-width: 480px) {
     .hero {
-      padding: 3rem 0 4rem;
+      padding: 5rem 0 4rem; /* Más espacio arriba para mejor jerarquía */
+      min-height: calc(100vh - 68px); /* Altura completa menos header */
+    }
+
+    .hero-content {
+      max-width: 95%; /* Mejor uso del espacio móvil */
+      padding: 0 0.5rem; /* Padding interno mínimo */
     }
 
     .hero h1 {
-      font-size: 2.25rem;
+      font-size: 2rem; /* 32px - óptimo para móvil */
+      font-weight: 400; /* Más peso para mejor legibilidad */
+      line-height: 1.2; /* Line-height compacto pero legible */
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em; /* Menos tracking en móvil */
     }
 
     .hero-description {
-      font-size: 1.125rem;
-      margin-bottom: 2.5rem;
+      font-size: 1rem; /* 16px - estándar móvil */
+      line-height: 1.5; /* Mejor legibilidad */
+      margin-bottom: 2rem;
+      max-width: 100%; /* Uso completo del ancho disponible */
     }
 
     .hero-cta {
       padding: 1rem 2rem;
       font-size: 1rem;
+      min-height: 48px; /* Touch target recomendado */
+      width: 100%;
+      max-width: 280px; /* Ancho máximo para evitar botones muy largos */
     }
 
     .hero-trust small {
-      font-size: 0.8rem;
+      font-size: 0.875rem; /* 14px - legible pero sutil */
+    }
+  }
+
+  /* Móviles pequeños (iPhone SE, etc) */
+  @media (max-width: 375px) {
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-content {
+      padding: 0 0.25rem;
+    }
+
+    .hero h1 {
+      font-size: 1.75rem; /* 28px - mínimo para pantallas muy pequeñas */
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem; /* 15px - ajuste fino para pantallas pequeñas */
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-cta {
+      max-width: 100%;
+      padding: 0.875rem 1.5rem;
+    }
+  }
+
+  /* Tablet portrait - mejoras para 768px */
+  @media (max-width: 768px) and (min-width: 481px) {
+    .hero {
+      padding: 4rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem; /* 40px - aprovecha mejor el espacio de tablet */
+      line-height: 1.1;
+    }
+
+    .hero-description {
+      font-size: 1.125rem; /* 18px - cómodo en tablet */
+      margin-bottom: 2.5rem;
+      max-width: 85%;
+    }
+
+    .hero-cta {
+      padding: 1.125rem 2.5rem;
+      font-size: 1.125rem;
+      max-width: 300px;
+    }
+  }
+
+  /* Landscape mobile optimization */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+      padding: 2rem 0;
+      min-height: auto;
+    }
+
+    .hero h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-description {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  /* iOS Safari viewport fix */
+  @supports (-webkit-touch-callout: none) {
+    @media (max-width: 480px) {
+      .hero {
+        min-height: -webkit-fill-available;
+      }
     }
   }
 </style>
