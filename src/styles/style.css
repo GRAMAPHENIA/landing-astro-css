@@ -75,9 +75,6 @@ section {
 /* Alternancia sutil de fondos para distinguir secciones */
 section:nth-child(even) {
   background-color: var(--color-base);
-  margin-inline: 10rem;
-  border-radius: 0;
-  border: 1px solid var(--color-border-light);
 }
 
 #features {
@@ -85,7 +82,11 @@ section:nth-child(even) {
   border: none;
   border-radius: 0;
   margin-inline: 0;
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 5rem;
+}
+
+#products {
+  scroll-margin-top: 5rem;
 }
 
 #testimonials {
@@ -93,14 +94,14 @@ section:nth-child(even) {
 }
 
 #faq {
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 5rem;
   border: none !important;
   border-radius: 0 !important;
   margin-inline: 0 !important;
 }
 
 #contact {
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 5rem;
 }
 
 section:nth-child(odd) {
@@ -311,8 +312,9 @@ p {
 
 .card:hover {
   border-color: var(--color-border-primary);
-  background-color: var(--surface-hover); /* sutil cambio de fondo */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: var(--surface-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 /* =============================
@@ -594,4 +596,73 @@ p {
 }
 .mb-4 {
   margin-bottom: 4rem;
+}
+
+/* Jerarquía de Colores - Texto */
+.section-title {
+  margin-bottom: 1rem !important;
+}
+
+.section-description {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Hero específico */
+.hero h1 {
+  color: var(--color-text-dark);
+}
+
+.hero-description {
+  color: var(--color-text-muted);
+}
+
+/* Features */
+.card h3 {
+  color: var(--color-text-dark);
+}
+
+.card p {
+  color: var(--color-text-muted);
+}
+
+/* Testimonials */
+.quote {
+  color: var(--color-text-dark);
+  font-style: italic;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.author strong {
+  color: var(--color-text-dark);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.author span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* FAQ */
+.faq-question {
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.faq-content {
+  color: var(--color-text-muted);
+}
+
+/* Benefits */
+.benefits-grid li {
+  color: var(--color-text);
+}
+
+/* Focus sutil para accesibilidad (solo aparece al navegar con teclado) */
+:focus-visible {
+  outline: 1px solid var(--color-primary);
+  outline-offset: 2px;
 }

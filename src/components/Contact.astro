@@ -1,7 +1,7 @@
 <section id="contact">
   <div class="container">
     <div class="contact-content text-center">
-      <h2>Comienza hoy mismo</h2>
+      <h2 class="section-title">Comienza hoy mismo</h2>
       <p class="contact-description">Únete a miles de usuarios que ya han mejorado su productividad.</p>
 
       <form class="contact-form">
@@ -29,7 +29,7 @@
   .contact-description {
     font-size: 1.125rem;
     color: var(--color-text-muted);
-    margin: 1rem auto 2rem;
+    margin: 0 auto 2rem;
     line-height: 1.6;
   }
   .contact-form {
@@ -37,10 +37,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    background: transparent;
-    border-radius: 0;
-    padding: 2.5rem 2rem;
-    border: none;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -65,7 +61,6 @@
   .contact-form textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    background: var(--color-accent-light);
   }
   .contact-form textarea {
     min-height: 120px;
@@ -82,11 +77,6 @@
   
   /* Responsive para formulario */
   @media (max-width: 768px) {
-    .contact-form {
-      max-width: 100%;
-      padding: 2rem 1.5rem;
-    }
-    
     .contact-form button {
       align-self: stretch;
       min-width: auto;
@@ -95,10 +85,6 @@
   }
   
   @media (max-width: 576px) {
-    .contact-form {
-      padding: 1.5rem 1rem;
-    }
-    
     .contact-form input,
     .contact-form textarea {
       font-size: 1rem;

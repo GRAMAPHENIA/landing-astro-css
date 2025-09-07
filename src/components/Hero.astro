@@ -8,19 +8,94 @@
       <h1>Simplifica tu trabajo diario</h1>
       <p class="hero-description">La herramienta que necesitas para ser más productivo, sin complicaciones ni curvas de aprendizaje.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Empezar gratis</a>
-        <a href="#features" class="btn">Características</a>
+        <a href="#contact" class="btn btn-primary hero-cta">Empezar ahora</a>
+        <div class="hero-trust">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+  .hero {
+    padding: 4rem 0 5rem;
+    background: var(--color-base);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
   .hero-description {
     font-size: 1.25rem;
     color: var(--color-text-muted);
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 3rem;
     line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-cta {
+    font-size: 1.125rem;
+    padding: 1.25rem 2.5rem;
+    border-radius: var(--radius-small);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px oklch(55% 0.02 50 / 0.15);
+  }
+
+  .hero-cta:hover {
+    box-shadow: 0 4px 12px oklch(55% 0.02 50 / 0.25);
+  }
+
+  .hero-trust {
+    margin-top: 0.5rem;
+  }
+
+  .hero-trust small {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    opacity: 0.9;
+    font-weight: 400;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 3rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+
+    .hero-trust small {
+      font-size: 0.8rem;
+    }
   }
 </style>
