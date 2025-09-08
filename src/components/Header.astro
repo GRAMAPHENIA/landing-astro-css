@@ -3,7 +3,7 @@
 ---
 
 <header class="header">
-  <div class="container">
+  <div class="header-content">
     <a href="#top" class="logo">
       <img src="/logos/logo.svg" alt="Logo" class="logo-img" />
  
@@ -55,6 +55,7 @@
     const mobileSidebar = document.getElementById('mobileSidebar') as HTMLElement | null;
     const mobileMenuOverlay = document.getElementById('mobileMenuOverlay') as HTMLElement | null;
     const sidebarLinks = document.querySelectorAll<HTMLAnchorElement>('.sidebar-link');
+    const header = document.querySelector('.header') as HTMLElement | null;
     
     // Validar que todos los elementos existan
     if (!mobileMenuBtn || !sidebarCloseBtn || !mobileSidebar || !mobileMenuOverlay) {
@@ -97,6 +98,23 @@
         closeSidebar();
       });
     });
+    
+    // Función para manejar el evento de scroll
+    function handleScroll() {
+      if (header) {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    }
+    
+    // Comprobar posición inicial del scroll
+    handleScroll();
+    
+    // Agregar listener para el evento scroll
+    window.addEventListener('scroll', handleScroll);
     
     // Cerrar sidebar con tecla Escape
     document.addEventListener('keydown', (e) => {

@@ -210,14 +210,20 @@ p {
   width: 100%;
   background-color: var(--color-base);
   z-index: 997;
-  padding: 0.75rem 0;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+
+.header.scrolled {
   border-bottom: 1px solid var(--color-border-light);
 }
 
-.header .container {
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .logo {
@@ -630,7 +636,7 @@ body.sidebar-open {
   }
 
   .header {
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
   }
 
   .logo-img {
