@@ -1,4 +1,4 @@
-# Landing Page Microminimalista
+# Landing Page - Edge
 
 Una landing page completamente optimizada para obtener **100 puntos en Google Lighthouse** en todas las categorías.
 

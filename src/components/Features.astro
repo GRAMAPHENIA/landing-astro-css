@@ -88,16 +88,17 @@
   @media (max-width: 576px) {
     .section-title {
       font-size: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
-    .section-description {
+    .grid-3 {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 2rem;
       max-width: 95vw;
-    }
-    .card-title {
-      font-size: 1.125rem;
+        .grid-3 {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
       margin-bottom: 0.5rem;
     }
     .card-text {

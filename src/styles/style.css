@@ -5,10 +5,9 @@
 :root {
   /* Paleta tierra desaturada (OKLCH, bajo croma) */
   --color-base: oklch(96% 0.01 80); /* gris-beige claro */
-  --color-text: oklch(20% 0.01 40); /* marrón apagado */
+  --color-text: oklch(20.104% 0.00906 42.94); /* marrón apagado */
   --color-text-dark: oklch(
-    20.104% 0.00906 42.94 / 0.834
-  ); /* marrón oscuro para énfasis */
+    20.104% 0.00906 42.94 / 0.834); /* marrón oscuro para énfasis */
   --color-primary: oklch(54.916% 0.02065 48.211); /* terracota desaturada */
   --color-secondary: oklch(44.873% 0.01496 29.798); /* arcilla grisácea */
   --color-accent: oklch(70% 0.02 70); /* arena apagada */
@@ -289,15 +288,16 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, 
-    oklch(20% 0.01 40 / 0.4), 
+  background: linear-gradient(
+    135deg,
+    oklch(20% 0.01 40 / 0.4),
     oklch(25% 0.015 60 / 0.3)
   );
   backdrop-filter: blur(3px);
   z-index: 998;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-overlay.active {
@@ -315,7 +315,7 @@ p {
   border-left: 1px solid var(--color-border-light);
   z-index: 999;
   padding: 0;
-  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -8px 0 32px oklch(20% 0.01 40 / 0.12);
   display: flex;
   flex-direction: column;
@@ -355,7 +355,7 @@ p {
 }
 
 .sidebar-close-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -422,24 +422,19 @@ body.sidebar-open {
   overflow: hidden;
 }
 
-/* Mostrar botón móvil y ocultar nav desktop en pantallas pequeñas */
-@media (max-width: 768px) {
+/* Mostrar botón móvil y ocultar nav desktop en pantallas pequeñas y tabletas */
+@media (max-width: 1024px) {
   .nav-desktop {
     display: none;
   }
-  
   .mobile-menu-btn {
     display: block;
   }
-  
-  /* Asegurar alineación perfecta en móvil */
   .sidebar-header {
     padding: 0.75rem 2rem;
     min-height: calc(40px + 1.5rem);
   }
-  
   .sidebar-close-btn {
-    /* Posición exacta para coincidir con mobile-menu-btn */
     margin-right: 0;
   }
 }
@@ -572,10 +567,11 @@ body.sidebar-open {
   h1 {
     font-size: 2.25rem;
   }
-  
+
   h2 {
     font-size: 1.75rem;
-  }  section {
+  }
+  section {
     padding: 4rem 0;
   }
 }
@@ -606,10 +602,11 @@ body.sidebar-open {
     font-size: 1.625rem;
     margin-bottom: 2rem;
   }
-  
+
   h3 {
     font-size: 1.25rem;
-  }  p {
+  }
+  p {
     font-size: 1rem;
   }
 
@@ -650,10 +647,11 @@ body.sidebar-open {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   h3 {
     font-size: 1.125rem;
-  }  p {
+  }
+  p {
     font-size: 0.95rem;
     line-height: 1.6;
   }
