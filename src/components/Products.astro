@@ -13,6 +13,11 @@
       <div class="card product-card">
         <h3 class="card-title">Básico</h3>
         <p class="card-text">Para equipos pequeños que necesitan funciones esenciales.</p>
+        <ul class="features-list">
+          <li>Funciones esenciales</li>
+          <li>Fácil de usar</li>
+          <li>Listo para empezar</li>
+        </ul>
         <div class="product-bottom">
           <div class="price">$49/mes</div>
           <a href="#contact" class="btn btn-outline">Empezar</a>
@@ -22,6 +27,11 @@
       <div class="card product-card featured">
         <h3 class="card-title">Profesional</h3>
         <p class="card-text">Para empresas que buscan herramientas avanzadas y flexibilidad.</p>
+        <ul class="features-list">
+          <li>Más opciones disponibles</li>
+          <li>Ideal para crecer</li>
+          <li>Acceso ampliado</li>
+        </ul>
         <div class="product-bottom">
           <div class="price">$99/mes</div>
           <a href="#contact" class="btn btn-primary">Probar gratis</a>
@@ -31,6 +41,11 @@
       <div class="card product-card">
         <h3 class="card-title">Empresarial</h3>
         <p class="card-text">Solución completa con soporte dedicado para grandes equipos.</p>
+        <ul class="features-list">
+          <li>Todo lo necesario</li>
+          <li>Flexibilidad completa</li>
+          <li>Rendimiento optimizado</li>
+        </ul>
         <div class="product-bottom">
           <div class="price">A consultar</div>
           <a href="#contact" class="btn btn-outline">Contactar</a>
@@ -42,7 +57,7 @@
 
 <style>
   .section-intro {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   
   .section-title {
@@ -107,6 +122,14 @@
     flex-shrink: 0;
   }
 
+  .features-list {
+    list-style: square;
+    padding: 0;
+    margin: 2rem 0 3rem 2rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     .products-grid {
@@ -134,7 +157,7 @@
         gap: 1.25rem;
       }
       }
-      }
+      
       .product-card {
         padding: 2rem 1.25rem;
         border-radius: 0;
@@ -161,5 +184,5 @@
         min-height: 44px;
         width: auto;
       }
-    }
+    
 </style>
