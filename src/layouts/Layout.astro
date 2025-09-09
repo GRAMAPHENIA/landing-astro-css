@@ -1,7 +1,7 @@
 ---
-// Layout.astro - Microminimalista
+// Layout.astro - Optimizado para Critical Path
 import "../styles/style.css";
-// ...existing code...
+
 const {
   title = "Edge - Landing page",
   description = "Landing page profesional",
@@ -18,6 +18,32 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index, follow" />
+    
+    <!-- CSS Crítico Inline para Above-the-Fold -->
+    <style>
+      :root {
+        --color-base: oklch(96% 0.01 80);
+        --color-text: oklch(20.104% 0.00906 42.94);
+        --color-text-dark: oklch(20.104% 0.00906 42.94 / 0.834);
+        --color-primary: oklch(54.916% 0.02065 48.211);
+        --color-border-primary: color-mix(in oklch, var(--color-primary), transparent 50%);
+        --radius-none: 0;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { overflow-x: hidden; width: 100%; }
+      html { font-size: 16px; scroll-behavior: smooth; }
+      body { 
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: var(--color-base);
+        color: var(--color-text);
+        line-height: 1.7;
+        font-weight: 400;
+      }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      .text-center { text-align: center; }
+      h1 { font-size: 2.75rem; font-weight: 300; line-height: 1.1; color: var(--color-text-dark); }
+      span { font-weight: 600; color: var(--color-text-dark); }
+    </style>
   </head>
   <body id="top">
     <slot />
