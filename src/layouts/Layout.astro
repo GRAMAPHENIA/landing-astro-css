@@ -5,13 +5,12 @@ import "../styles/style.css";
 const {
   title = "Producto Minimalista",
   description = "Landing page simple y profesional",
-  url = "https://tusitio.com"
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -19,42 +18,42 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index, follow" />
-  <!-- Eliminado Analytics de Vercel -->
+    <!-- Eliminado Analytics de Vercel -->
   </head>
   <body id="top">
     <slot />
-    
+
     <script>
       // JavaScript minimalista para interactividad
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         // FAQ toggle simple
-        document.querySelectorAll('.faq-question').forEach(question => {
-          question.addEventListener('click', () => {
-            const item = question.closest('.faq-item');
+        document.querySelectorAll(".faq-question").forEach((question) => {
+          question.addEventListener("click", () => {
+            const item = question.closest(".faq-item");
             if (!item) return;
-            const isActive = item.classList.contains('active');
-            
+            const isActive = item.classList.contains("active");
+
             // Cerrar todos
-            document.querySelectorAll('.faq-item').forEach(faq => {
-              faq.classList.remove('active');
+              document.querySelectorAll(".faq-item").forEach((faq) => {
+              faq.classList.remove("active");
             });
-            
+
             // Abrir el clickeado si no estaba activo
             if (!isActive) {
-              item.classList.add('active');
+              item.classList.add("active");
             }
           });
         });
-        
+
         // Navegación suave
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-          link.addEventListener('click', (e) => {
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", (e) => {
             e.preventDefault();
-            const href = link.getAttribute('href');
+            const href = link.getAttribute("href");
             if (href) {
               const target = document.querySelector(href);
               if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                target.scrollIntoView({ behavior: "smooth" });
               }
             }
           });

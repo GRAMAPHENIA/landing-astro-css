@@ -1,0 +1,114 @@
+/* =============================
+   UTILIDADES
+   ============================= */
+.text-center {
+  text-align: center;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+/* =============================
+   BOTONES ESPECIALES
+   ============================= */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* =============================
+   COLORES ESPECÍFICOS DE COMPONENTES
+   ============================= */
+/* Hero específico */
+.hero h1 {
+  color: var(--color-text-dark);
+}
+
+.hero-description {
+  color: var(--color-text-muted);
+}
+
+/* Features */
+.card h3 {
+  color: var(--color-text-dark);
+}
+
+.card p {
+  color: var(--color-text-muted);
+}
+
+/* Testimonials */
+.quote {
+  color: var(--color-text-dark);
+  font-style: italic;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.author strong {
+  color: var(--color-text-dark);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.author span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* FAQ */
+.faq-question {
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.faq-content {
+  color: var(--color-text-muted);
+}
+
+/* Benefits */
+.benefits-grid li {
+  color: var(--color-text);
+}
+
+/* =============================
+   RESPONSIVE UTILITIES
+   ============================= */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-buttons {
+    margin-top: 1.5rem;
+  }
+
+  .hero-buttons .btn {
+    max-width: 100%;
+    padding: 1rem 2rem;
+  }
+}

@@ -5,6 +5,37 @@ Todas las modificaciones notables de este proyecto serán documentadas en este a
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2025-09-09
+
+### Añadido
+- Sistema CSS modular con separación clara de responsabilidades
+- Documentación completa del refactoring CSS en `/docs/refactoring-css-completado.md`
+- Estructura de archivos CSS organizados por función (base, layout, components, utilities)
+- Variables CSS optimizadas con eliminación de código no utilizado
+
+### Cambiado
+- Reestructuración completa del sistema de estilos en 4 archivos modulares
+- Migración de estilos inline a CSS externo en todos los componentes
+- Simplificación del sistema de variables de color (de 15+ a 8 esenciales)
+- Organización mejorada de breakpoints responsive
+
+### Mejorado
+- Reducción del 50% en líneas de código CSS (de 800+ a ~400 líneas)
+- Eliminación completa de duplicaciones de código CSS
+- Mantenibilidad drasticamente mejorada con separación de responsabilidades
+- Performance optimizada con menor tamaño de archivos CSS
+
+### Corregido
+- Link del CTA principal corregido para apuntar correctamente a `#contact`
+- Estilos responsive caóticos reorganizados por breakpoints lógicos
+- Variables CSS no utilizadas eliminadas del sistema
+
+### Técnico
+- Sistema de imports CSS modular: `style.css` → `base.css`, `layout.css`, `components.css`, `utilities.css`
+- Mantenimiento exacto de la apariencia visual durante la refactorización
+- Componentes Astro limpiados de estilos inline: Hero, Features, Products, Testimonials, FAQ, Contact, CTA, Footer
+- Documentación técnica completa del proceso de refactoring
+
 ## [1.3.0] - 2025-09-07
 
 ### Añadido
