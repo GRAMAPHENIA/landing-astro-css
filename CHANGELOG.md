@@ -5,6 +5,39 @@ Todas las modificaciones notables de este proyecto serán documentadas en este a
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2025-09-10
+
+### Añadido
+- CSS crítico inline para optimización de Core Web Vitals
+- Configuración Astro con CSS inlining y build optimizations
+- Clase `.btn-outline` para botones con mejor contraste
+- Sistema de spans con font-weight mejorado para mayor peso visual
+- Optimizaciones de performance para Lighthouse
+
+### Cambiado
+- Colores de texto optimizados para mejor contraste WCAG AA
+- `--color-text`: De 20.104% a 17% de luminosidad
+- `--color-text-dark`: De opacity 0.834 a 12% de luminosidad sólida  
+- `--color-text-muted`: De 60% a 52% de luminosidad
+- Layout.astro con CSS crítico inline para render no bloqueante
+
+### Mejorado
+- Contraste de todos los elementos problemáticos identificados por Lighthouse
+- Performance de Core Web Vitals (LCP, FCP) con CSS crítico
+- Accesibilidad con contraste WCAG AA compliant en botones, cards y textos
+- Legibilidad general manteniendo la estética del diseño
+
+### Corregido
+- Elementos con contraste insuficiente: botones outline, títulos de cards, precios, versión del footer
+- Render blocking CSS con implementación de preload no bloqueante
+- Colores de elementos featured que usaban color primario con bajo contraste
+
+### Técnico
+- CSS crítico extraído e inline en Layout.astro
+- Configuración Astro optimizada con experimental.optimizeHoistedScript
+- Todos los elementos pasan las pruebas de contraste de Lighthouse
+- Mejoras significativas esperadas en puntuaciones de Performance y Accessibility
+
 ## [1.4.0] - 2025-09-09
 
 ### Añadido
