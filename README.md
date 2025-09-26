@@ -1,6 +1,6 @@
 # Landing Page Microminimalista
 
-Landing page optimizada con Astro. Lighthouse 100/100 en todas las categorías.
+Landing page optimizada con Astro.
 
 ## Inicio Rápido
 
@@ -33,7 +33,6 @@ src/
 
 ## Características
 
-- ✅ Lighthouse 100/100
 - ✅ Core Web Vitals optimizados
 - ✅ CSS crítico inline
 - ✅ Mobile-first responsive
